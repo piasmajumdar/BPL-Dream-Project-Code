@@ -9,9 +9,9 @@ const Banner = () => {
             <img className='mx-auto' src={banner} alt="" />
             <h3 className='text-3xl text-white font-bold'>Assemble Your Ultimate Dream 11 Cricket Team</h3>
             <p className='text-gray-400 text-2xl font-semibold'>Beyond Boundaries Beyond Limits</p>
-            <button className='border border-[#E7FE29] rounded-md p-1'>
+            <div className='border border-[#E7FE29] rounded-md p-1 inline-block'>
                 <button className='py-2 px-4 bg-[#E7FE29] rounded-md font-bold'>Claim Free Credit</button>
-            </button>
+            </div>
         </div>
     );
 };
