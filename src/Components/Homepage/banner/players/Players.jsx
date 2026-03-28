@@ -18,11 +18,11 @@ const Players = ({ playerPromise, setCoin, coin }) => {
 
                 {selectedType === "available" ?
                     <h2 className='font-bold text-3xl'>Available Players</h2>
-                    : <h2 className='font-bold text-3xl'>Selected Player (4/6)</h2>}
+                    : <h2 className='font-bold text-3xl'>Selected Player ({selectedPlayers.length}/{players.length})</h2>}
 
                 <div>
                     <button onClick={() => setSelectedType("available")} className={`btn ${selectedType === "available" ? 'bg-[#E7FE29]' : ''} rounded-r-none rounded-l-xl`}>Available</button>
-                    <button onClick={() => setSelectedType("selected")} className={`btn ${selectedType === "selected" ? "bg-[#E7FE29]" : ""} rounded-l-none rounded-r-xl`}>Selected (0)</button>
+                    <button onClick={() => setSelectedType("selected")} className={`btn ${selectedType === "selected" ? "bg-[#E7FE29]" : ""} rounded-l-none rounded-r-xl`}>Selected ({selectedPlayers.length})</button>
                 </div>
             </div>
 
@@ -34,7 +34,13 @@ const Players = ({ playerPromise, setCoin, coin }) => {
                     selectedPlayers={selectedPlayers}
                     setSelectedPlayers={setSelectedPlayers}>
                 </AvailablePlayers>
-                : <SelectedPlayers selectedPlayers={selectedPlayers}></SelectedPlayers>}
+                :
+                <SelectedPlayers
+                    selectedPlayers={selectedPlayers}
+                    setSelectedPlayers={setSelectedPlayers}
+                    setCoin={setCoin}
+                    coin={coin}>
+                </SelectedPlayers>}
         </div>
     );
 };

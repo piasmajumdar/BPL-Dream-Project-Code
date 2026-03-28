@@ -1,10 +1,37 @@
-import React from 'react';
+import { FaUser } from "react-icons/fa";
+import { MdDelete } from "react-icons/md";
 
-const SelectedPlayers = ({selectedPlayers}) => {
+const SelectedPlayers = ({ selectedPlayers, setSelectedPlayers, coin, setCoin }) => {
     console.log(selectedPlayers);
+
+    const handleDeleteSelectedPlayer = (player)=>{
+        // console.log("selectedPlayers", selectedPlayers)
+        // console.log(player, "player delete");
+        const filteredPlayers = selectedPlayers.filter(selectedPlayer => selectedPlayer.playerName != player.playerName);
+        // console.log("filteredPlayers", filteredPlayers);
+        setSelectedPlayers(filteredPlayers);
+        setCoin(coin+ player.Price)
+
+    }
     return (
         <div>
-            Selected Players
+            <div className="space-y-5">
+                {
+                    selectedPlayers.map((player, index) => {
+                        return <div key={index} className="flex items-center gap6 justify-between p-10 rounded-2xl border">
+                            <div className="flex items-center gap-2 ">
+                                <img className="h-15 w-auto rounded-md" src={player.playerImg} alt="" />
+                                <div>
+                                    <h2 className="flex items-center gap-2 font-semibold text-xl"> <FaUser />{player.playerName}</h2>
+                                    <p>{player.playerType}</p>
+                                </div>
+                            </div>
+                            <button className="btn text-red-500" onClick={()=>handleDeleteSelectedPlayer(player)}><MdDelete /></button>
+                        </div>
+
+                    })
+                }
+            </div>
         </div>
     );
 };
