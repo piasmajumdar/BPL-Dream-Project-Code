@@ -2,7 +2,7 @@
 import { useState } from 'react';
 import { FaFlag, FaUser } from 'react-icons/fa';
 
-const card = ({ player, setCoin, coin }) => {
+const card = ({ player, setCoin, coin, selectedPlayers, setSelectedPlayers }) => {
 
     const [isSelected, setIsSelected] = useState(false);
 
@@ -17,6 +17,7 @@ const card = ({ player, setCoin, coin }) => {
         
         alert(`${player.playerName} is selected`)
         setIsSelected(true);
+        setSelectedPlayers([...selectedPlayers, player])
     }
 
     return (
