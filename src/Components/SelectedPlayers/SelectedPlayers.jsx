@@ -1,33 +1,32 @@
-import { FaUser } from "react-icons/fa";
-import { MdDelete } from "react-icons/md";
+import SelectedCard from './../ui/SelectedCard';
 
 const SelectedPlayers = ({ selectedPlayers, setSelectedPlayers, coin, setCoin }) => {
     console.log(selectedPlayers);
 
-    const handleDeleteSelectedPlayer = (player)=>{
+    const handleDeleteSelectedPlayer = (player) => {
         // console.log("selectedPlayers", selectedPlayers)
         // console.log(player, "player delete");
         const filteredPlayers = selectedPlayers.filter(selectedPlayer => selectedPlayer.playerName != player.playerName);
         // console.log("filteredPlayers", filteredPlayers);
         setSelectedPlayers(filteredPlayers);
-        setCoin(coin+ player.Price)
+        setCoin(coin + player.Price)
 
     }
     return (
         <div>
             <div className="space-y-5">
-                {
+                {selectedPlayers.length === 0 ?
+                    <div className="h-100 flex flex-col justify-center items-center gap-4">
+                        <h2 className="font-semibold text-xl">No players selected yet</h2>
+                        <p>Go to Available tab to select players</p>
+                    </div>
+                    :
                     selectedPlayers.map((player, index) => {
-                        return <div key={index} className="flex items-center gap6 justify-between p-10 rounded-2xl border">
-                            <div className="flex items-center gap-2 ">
-                                <img className="h-15 w-auto rounded-md" src={player.playerImg} alt="" />
-                                <div>
-                                    <h2 className="flex items-center gap-2 font-semibold text-xl"> <FaUser />{player.playerName}</h2>
-                                    <p>{player.playerType}</p>
-                                </div>
-                            </div>
-                            <button className="btn text-red-500" onClick={()=>handleDeleteSelectedPlayer(player)}><MdDelete /></button>
-                        </div>
+                        return <SelectedCard
+                            player={player}
+                            key={index}
+                            handleDeleteSelectedPlayer={handleDeleteSelectedPlayer}>
+                        </SelectedCard>
 
                     })
                 }
