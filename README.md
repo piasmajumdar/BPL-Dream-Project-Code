@@ -43,10 +43,10 @@ The app demonstrates real-world React concepts like **state management, componen
 
 ```bash
 # Clone the repository
-git clone https://github.com/your-username/bpl-player-selection-app.git
+git clone https://github.com/piasmajumdar/BPL-Dream-Project-Code.git
 
 # Go to project directory
-cd bpl-player-selection-app
+cd BPL-Dream-Project-Code
 
 # Install dependencies
 npm install
