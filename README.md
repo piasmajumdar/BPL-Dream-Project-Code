@@ -1,47 +1,55 @@
 # 🏏 BPL Player Selection App
 
-A dynamic and interactive **Bangladesh Premier League (BPL) Player Selection App** built using **React, Tailwind CSS, and DaisyUI**. This project simulates a real-world player drafting system with budget constraints and responsive UI updates.
-
-
----
-
-## 📌 Features
-
-- 🔄 Toggle between **Available Players** and **Selected Players**
-- 💰 **Coin-based selection system** (budget management)
-- 🧑‍🤝‍🧑 Select and remove players dynamically
-- ⚡ Instant UI updates using React state
-- 🔔 Notifications using **React Toastify**
-- 📱 Fully responsive design with **Tailwind CSS + DaisyUI**
+## 📖 Overview (সংক্ষেপে)
+This is a **BPL (Bangladesh Premier League) Player Selection App** where users can select players based on a limited coin budget.  
+The app demonstrates real-world React concepts like **state management, component communication, and dynamic UI updates**.
 
 ---
 
-## 🛠️ Tech Stack
-
-- **Frontend:** React (Vite)
-- **Styling:** Tailwind CSS, DaisyUI
-- **State Management:** React Hooks (`useState`)
-- **Notifications:** React Toastify
-- **Data Source:** Local JSON (API-like structure)
+## 📸 Screenshot
+👉 
+![App Screenshot](./screenshot.png)
 
 ---
 
-## 📚 What I Learned
-
-- Setting up a React project with Tailwind & DaisyUI  
-- Handling **dynamic data loading from JSON**  
-- Building reusable UI components (player cards)  
-- Managing **state and data flow across components**  
-- Implementing **props drilling & lifting state up**  
-- Creating **real-time UI updates based on user actions**  
-- Using `filter()` for removing selected items  
-- Integrating third-party libraries (Toastify)  
-- Deploying a React application  
+## 🛠️ Main Technologies Used
+- React (Vite)
+- Tailwind CSS
+- DaisyUI
+- JavaScript (ES6+)
 
 ---
 
-## 🧠 Core Logic
+## ✨ Core Features
+- Toggle between **Available Players** and **Selected Players**
+- **Coin system** (budget control while selecting players)
+- Add & remove players dynamically
+- Real-time UI updates based on user interaction
+- Toast notifications using React Toastify
+- Responsive UI design
 
-```javascript
-setSelectedPlayers([...selectedPlayers, player]);
-setCoin(coin - player.price);
+---
+
+## 📦 Dependencies
+- react
+- react-dom
+- tailwindcss
+- daisyui
+- react-toastify
+
+---
+
+## ⚙️ How to Run Locally
+
+```bash
+# Clone the repository
+git clone https://github.com/your-username/bpl-player-selection-app.git
+
+# Go to project directory
+cd bpl-player-selection-app
+
+# Install dependencies
+npm install
+
+# Run the project
+npm run dev
